@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       transform: ['hover', 'focus'],
       backgroundColor: ['active'],
+      textDecoration: ['checked'],
     },
   },
   plugins: [],
