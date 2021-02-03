@@ -11,5 +11,9 @@ module.exports = {
       textDecoration: ['checked'],
     },
   },
-  plugins: [],
+  plugins: [
+    "postcss-import",
+      "tailwindcss",
+      "autoprefixer"
+  ],
 }
