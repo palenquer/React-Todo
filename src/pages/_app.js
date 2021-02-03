@@ -1,4 +1,5 @@
 import "tailwindcss/tailwind.css";
+import "../styles/globals.css"
 import ActiveLink from "../components/ActiveLink";
 import Button from "../components/Button";
 import React, { useState } from "react";
