@@ -1,9 +1,8 @@
 import "tailwindcss/tailwind.css";
-import "../styles/globals.css"
+import "../styles/globals.css";
 import ActiveLink from "../components/ActiveLink";
 import Button from "../components/Button";
 import React, { useState } from "react";
-import TodoField from "../components/TodoField";
 
 function MyApp({ Component, pageProps }) {
   const [todo, setTodo] = useState([]);
@@ -15,9 +14,9 @@ function MyApp({ Component, pageProps }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    change.length >= 1 ? setTodo([change, ...todo]) : null
+    change.length >= 1 ? setTodo([change, ...todo]) : alert("Todo Item must contain at least 1 character or more");
     setChange("");
-    console.log(todo)
+    console.log(todo);
   };
 
   return (
@@ -56,20 +55,10 @@ function MyApp({ Component, pageProps }) {
           />
           <Button />
         </form>
-        <div className="flex justify-center flex-col w-full items-center mt-4">
-          {
-            todo.length >= 1 ? todo.map((todoText, todoItem) => {
-              return (
-                <div key={todoItem} className="flex justify-between flex-col w-full md:max-w-2xl h-11">
-                  <TodoField name={todoText} />
-                </div>
-              )
-            })
-            : "Enter a todo Item"
-          }
-        </div>
       </main>
-      <Component {...pageProps} />
+      <Component {...pageProps}
+      todo={todo}
+      />
     </div>
   );
 }
